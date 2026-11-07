@@ -1,0 +1,2918 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>🎄 Gali Dana B3 - Web Poster Christmas Edition</title>
+  
+  <!-- SEO & Social Sharing Meta Tags -->
+  <meta name="description" content="Open Pre-Order Gali Dana B3 Christmas Edition! Nikmati aneka dessert manis, soft cookies lumer, camilan gurih pedas, dan salad buah segar spesial Natal. Periode PO: 9 - 12 November 2026.">
+  <meta name="theme-color" content="#8f0500">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="🎄 Gali Dana B3 - Web Poster Christmas Edition">
+  <meta property="og:description" content="Open Pre-Order Gali Dana B3 Christmas Edition! Nikmati dessert manis, soft cookies, camilan gurih pedas, dan salad segar spesial Natal. Periode: 9 - 12 November 2026.">
+  <meta property="og:image" content="./assets/cheesecuit%20tiramisu.jpg">
+  <meta property="og:url" content="https://noobien1.github.io/galidanab3/">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Google Fonts: Plus Jakarta Sans (Modern Clean) & Playfair Display (Christmas Warmth) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============== ============================================================
+       1. CSS VARIABLES & DESIGN TOKENS
+       Palet Warna Christmas: Marshmallow, Sugar Cookie, Hot Cacao, Ribbon, Garland
+       ========================================================================== */
+    :root {
+      /* Palette */
+      --color-marshmallow: #fffbe9;
+      --color-sugar-cookie: #ffecc5;
+      --color-hot-cacao: #562400;
+      --color-hot-cacao-light: #7b3806;
+      --color-hot-cacao-muted: rgba(86, 36, 0, 0.72);
+      --color-ribbon: #8f0500;
+      --color-ribbon-hover: #b00700;
+      --color-garland: #044529;
+      --color-garland-hover: #07613a;
+      --color-gold: #c88a1e;
+      --color-gold-light: #fef3d6;
+      --color-white: #ffffff;
+      
+      /* Card & Surface */
+      --bg-surface: #ffffff;
+      --bg-surface-soft: #fffdf5;
+      --border-soft: rgba(86, 36, 0, 0.12);
+      --border-accent: rgba(143, 5, 0, 0.25);
+      
+      /* Shadows */
+      --shadow-sm: 0 4px 12px rgba(86, 36, 0, 0.06);
+      --shadow-md: 0 10px 24px -4px rgba(86, 36, 0, 0.08), 0 4px 8px -2px rgba(86, 36, 0, 0.04);
+      --shadow-lg: 0 20px 32px -8px rgba(86, 36, 0, 0.14), 0 8px 16px -4px rgba(86, 36, 0, 0.08);
+      --shadow-glow: 0 0 25px rgba(143, 5, 0, 0.25);
+      
+      /* Radius */
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-pill: 9999px;
+
+      /* Typography */
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Playfair Display', Georgia, serif;
+    }
+
+    /* ==========================================================================
+       2. RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-marshmallow);
+      color: var(--color-hot-cacao);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 236, 197, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255, 236, 197, 0.6) 0%, transparent 40%);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ==========================================================================
+       3. CHRISTMAS SNOWFALL EFFECT (CSS ONLY & PERFORMANCE OPTIMIZED)
+       ========================================================================== */
+    .snow-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 99;
+      overflow: hidden;
+    }
+
+    .snowflake {
+      position: absolute;
+      top: -20px;
+      color: #fff;
+      user-select: none;
+      pointer-events: none;
+      animation-name: fall, sway;
+      animation-iteration-count: infinite, infinite;
+      animation-timing-function: linear, ease-in-out;
+      opacity: 0.75;
+      text-shadow: 0 0 4px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 236, 197, 0.6);
+    }
+
+    @keyframes fall {
+      0% { top: -20px; }
+      100% { top: 105vh; }
+    }
+
+    @keyframes sway {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(35px); }
+    }
+
+    /* ==========================================================================
+       4. TOP BANNER & NAVIGATION
+       ========================================================================== */
+    .top-announcement {
+      background: var(--color-garland);
+      color: var(--color-marshmallow);
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 251, 233, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-soft);
+      transition: all 0.3s ease;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    .brand-logos-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .inst-logo {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--color-hot-cacao);
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--color-ribbon), #5d0200);
+      color: #fff;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 10px rgba(143, 5, 0, 0.25);
+    }
+
+    .brand-text-sub {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-ribbon);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-hot-cacao);
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--color-ribbon);
+    }
+
+    .nav-btn-order {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-ribbon);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: var(--radius-pill);
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(143, 5, 0, 0.2);
+    }
+
+    .order-text-short {
+      display: none;
+    }
+
+    .nav-btn-order:hover {
+      background: var(--color-ribbon-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(143, 5, 0, 0.3);
+    }
+
+    /* ==========================================================================
+       5. HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      padding: 56px 0 40px;
+      position: relative;
+    }
+
+    .hero-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-sugar-cookie);
+      border: 1px solid var(--border-soft);
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--color-ribbon);
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5.5vw, 3.75rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--color-hot-cacao);
+      margin-bottom: 18px;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .hero-title span.accent-red {
+      color: var(--color-ribbon);
+      position: relative;
+    }
+
+    .hero-title span.accent-green {
+      color: var(--color-garland);
+    }
+
+    .hero-desc {
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      color: var(--color-hot-cacao-light);
+      max-width: 660px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+    }
+
+    .hero-feature-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .hero-pill-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--border-soft);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--color-hot-cacao);
+      box-shadow: 0 2px 6px rgba(86, 36, 0, 0.04);
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--color-ribbon);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 6px 18px rgba(143, 5, 0, 0.28);
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--color-ribbon-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(143, 5, 0, 0.35);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--color-sugar-cookie);
+      color: var(--color-hot-cacao);
+      border: 1.5px solid var(--border-soft);
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.25s ease;
+    }
+
+    .btn-secondary:hover {
+      background: #fae1b0;
+      transform: translateY(-2px);
+      border-color: var(--color-hot-cacao);
+    }
+
+    /* ==========================================================================
+       6. COUNTDOWN COMPONENT
+       ========================================================================== */
+    .countdown-card {
+      width: 100%;
+      background: linear-gradient(145deg, #ffffff, var(--color-marshmallow));
+      border: 2px solid var(--color-sugar-cookie);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .countdown-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: repeating-linear-gradient(
+        45deg,
+        var(--color-ribbon),
+        var(--color-ribbon) 15px,
+        #fff 15px,
+        #fff 30px,
+        var(--color-garland) 30px,
+        var(--color-garland) 45px,
+        #fff 45px,
+        #fff 60px
+      );
+    }
+
+    .countdown-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .countdown-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .countdown-badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(4, 69, 41, 0.12);
+      color: var(--color-garland);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .countdown-badge-live .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--color-garland);
+      border-radius: 50%;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.9); opacity: 0.7; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(0.9); opacity: 0.7; }
+    }
+
+    .countdown-title {
+      font-weight: 800;
+      font-size: 1.125rem;
+      color: var(--color-hot-cacao);
+    }
+
+    .countdown-subtitle {
+      font-size: 0.875rem;
+      color: var(--color-hot-cacao-muted);
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .timer-box {
+      background: var(--color-sugar-cookie);
+      border: 1px solid rgba(86, 36, 0, 0.08);
+      border-radius: var(--radius-md);
+      padding: 16px 8px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+    }
+
+    .timer-box:hover {
+      transform: translateY(-2px);
+    }
+
+    .timer-num {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--color-ribbon);
+      margin-bottom: 4px;
+    }
+
+    .timer-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--color-hot-cacao-muted);
+    }
+
+    .countdown-footer-note {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--color-hot-cacao-light);
+    }
+
+    /* ==========================================================================
+       7. CATALOG & MENU SECTION
+       ========================================================================== */
+    .catalog-section {
+      padding: 72px 0;
+      position: relative;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 40px;
+    }
+
+    .section-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(143, 5, 0, 0.08);
+      color: var(--color-ribbon);
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      color: var(--color-hot-cacao);
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--color-hot-cacao-muted);
+    }
+
+    /* Filter Tabs */
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      padding: 10px 20px;
+      border-radius: var(--radius-pill);
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: var(--bg-surface);
+      color: var(--color-hot-cacao);
+      border: 1.5px solid var(--border-soft);
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      background: var(--color-sugar-cookie);
+      border-color: var(--color-hot-cacao);
+    }
+
+    .filter-btn.active {
+      background: var(--color-garland);
+      color: #fff;
+      border-color: var(--color-garland);
+      box-shadow: 0 4px 12px rgba(4, 69, 41, 0.25);
+    }
+
+    /* Menu Grid */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    /* Menu Card */
+    .menu-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--border-accent);
+    }
+
+    /* Media Container */
+    .card-media {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      background: var(--color-sugar-cookie);
+      overflow: hidden;
+    }
+
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease, transform 0.4s ease;
+    }
+
+    .menu-card:hover .card-img {
+      transform: scale(1.04);
+    }
+
+    .card-img.is-transitioning {
+      opacity: 0.25;
+      transform: scale(0.97);
+    }
+
+    /* Badge on Image */
+    .card-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--color-ribbon);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .card-badge.garland {
+      color: var(--color-garland);
+    }
+
+    /* Flavor Badge Preview */
+    .flavor-current-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(86, 36, 0, 0.85);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      backdrop-filter: blur(4px);
+      z-index: 2;
+      transition: background 0.2s ease;
+    }
+
+    /* Card Content */
+    .card-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--color-hot-cacao);
+      line-height: 1.3;
+    }
+
+    .card-price {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--color-ribbon);
+      white-space: nowrap;
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      color: var(--color-hot-cacao-light);
+      line-height: 1.55;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    /* Flavor Switcher Controls */
+    .flavor-switcher-box {
+      background: var(--color-marshmallow);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      margin-bottom: 18px;
+    }
+
+    .flavor-switcher-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--color-hot-cacao-muted);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .flavor-switcher-label span.hint {
+      font-weight: 500;
+      text-transform: none;
+      color: var(--color-ribbon);
+      font-size: 0.72rem;
+    }
+
+    .flavor-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .flavor-btn {
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-soft);
+      color: var(--color-hot-cacao);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .flavor-btn:hover {
+      background: var(--color-sugar-cookie);
+      border-color: var(--color-hot-cacao);
+      transform: translateY(-1px);
+    }
+
+    .flavor-btn.active {
+      background: var(--color-ribbon);
+      color: #fff;
+      border-color: var(--color-ribbon);
+      box-shadow: 0 2px 8px rgba(143, 5, 0, 0.25);
+    }
+
+    /* Single Variant Notice */
+    .single-flavor-tag {
+      background: rgba(4, 69, 41, 0.08);
+      color: var(--color-garland);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Card Order Button */
+    .card-order-btn {
+      width: 100%;
+      background: var(--color-garland);
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 0.92rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(4, 69, 41, 0.2);
+    }
+
+    .card-order-btn:hover {
+      background: var(--color-garland-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(4, 69, 41, 0.3);
+    }
+
+    /* ==========================================================================
+       8. PAYMENT & INFO SECTION
+       ========================================================================== */
+    .info-section {
+      padding: 64px 0;
+      background: var(--color-sugar-cookie);
+      position: relative;
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      margin-top: 36px;
+    }
+
+    .info-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(86, 36, 0, 0.08);
+      position: relative;
+    }
+
+    .info-card.featured {
+      border: 2px solid var(--color-ribbon);
+      box-shadow: var(--shadow-md);
+    }
+
+    .info-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--color-marshmallow);
+      color: var(--color-ribbon);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .info-icon.garland {
+      color: var(--color-garland);
+    }
+
+    .info-card-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--color-hot-cacao);
+      margin-bottom: 10px;
+    }
+
+    .info-card-text {
+      font-size: 0.95rem;
+      color: var(--color-hot-cacao-light);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .cash-highlight-box {
+      background: rgba(143, 5, 0, 0.08);
+      border-left: 4px solid var(--color-ribbon);
+      padding: 12px 14px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-ribbon);
+    }
+
+    .order-steps-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .order-step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--color-hot-cacao);
+    }
+
+    .step-number {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--color-garland);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ==========================================================================
+       9. CONTACT & ORDER ADMIN SECTION
+       ========================================================================== */
+    .contact-section {
+      padding: 72px 0 84px;
+    }
+
+    .contact-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .admin-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .admin-card {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .admin-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-garland);
+    }
+
+    .admin-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-sugar-cookie), var(--color-marshmallow));
+      border: 3px solid var(--color-garland);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(4, 69, 41, 0.15);
+    }
+
+    .admin-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--color-hot-cacao);
+      margin-bottom: 4px;
+    }
+
+    .admin-role {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-hot-cacao-muted);
+      margin-bottom: 12px;
+    }
+
+    .admin-phone {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-ribbon);
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .admin-btn {
+      width: 100%;
+      background: #25D366;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+      transition: all 0.25s ease;
+    }
+
+    .admin-btn:hover {
+      background: #1eb857;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+    }
+
+    /* ==========================================================================
+       10. ORDER MODAL (POPUP PILIH ADMIN & VARIAN)
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(86, 36, 0, 0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .modal-backdrop.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .order-modal {
+      background: var(--bg-surface);
+      width: 100%;
+      max-width: 480px;
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      transform: translateY(20px) scale(0.96);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-backdrop.is-open .order-modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--color-sugar-cookie);
+      color: var(--color-hot-cacao);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+
+    .modal-close-btn:hover {
+      background: var(--color-ribbon);
+      color: #fff;
+    }
+
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-hot-cacao);
+      margin-bottom: 6px;
+    }
+
+    .modal-subtitle {
+      font-size: 0.88rem;
+      color: var(--color-hot-cacao-muted);
+      margin-bottom: 20px;
+    }
+
+    .modal-product-summary {
+      display: flex;
+      gap: 14px;
+      background: var(--color-marshmallow);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+
+    .modal-thumb {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .modal-prod-info {
+      flex-grow: 1;
+    }
+
+    .modal-prod-name {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--color-hot-cacao);
+    }
+
+    .modal-prod-variant {
+      font-size: 0.82rem;
+      color: var(--color-ribbon);
+      font-weight: 700;
+    }
+
+    .modal-prod-price {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--color-garland);
+    }
+
+    /* Modal Form Controls */
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-hot-cacao);
+      margin-bottom: 6px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border-soft);
+      background: #fff;
+      font-family: inherit;
+      font-size: 16px; /* 16px prevents iOS Safari viewport auto-zoom */
+      color: var(--color-hot-cacao);
+      transition: all 0.2s ease;
+      min-height: 44px;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--color-ribbon);
+    }
+
+    .qty-control {
+      display: inline-flex;
+      align-items: center;
+      background: var(--color-sugar-cookie);
+      border-radius: var(--radius-pill);
+      padding: 4px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .qty-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--color-hot-cacao);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+      transition: all 0.2s ease;
+    }
+
+    .qty-btn:hover {
+      background: var(--color-ribbon);
+      color: #fff;
+    }
+
+    .qty-value {
+      width: 44px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--color-hot-cacao);
+    }
+
+    .modal-total-box {
+      background: var(--color-sugar-cookie);
+      border: 1px dashed var(--color-ribbon);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 14px 0 18px;
+      font-size: 0.95rem;
+      color: var(--color-hot-cacao);
+    }
+
+    .modal-total-box strong {
+      color: var(--color-ribbon);
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .admin-pick-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .admin-radio-btn {
+      padding: 12px;
+      border: 1.5px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      text-align: center;
+      cursor: pointer;
+      background: #fff;
+      transition: all 0.2s ease;
+    }
+
+    .admin-radio-btn.active {
+      border-color: #25D366;
+      background: rgba(37, 211, 102, 0.08);
+    }
+
+    .admin-radio-btn strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--color-hot-cacao);
+    }
+
+    .admin-radio-btn span {
+      font-size: 0.75rem;
+      color: var(--color-hot-cacao-muted);
+    }
+
+    .modal-submit-btn {
+      width: 100%;
+      background: #25D366;
+      color: #fff;
+      padding: 14px;
+      border-radius: var(--radius-pill);
+      font-size: 1rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .modal-submit-btn:hover {
+      background: #1eb857;
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       11. FLOATING QUICK ACTION BUTTON
+       ========================================================================== */
+    .floating-cta {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .snow-toggle-btn {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-pill);
+      padding: 6px 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-hot-cacao);
+      box-shadow: var(--shadow-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .snow-toggle-btn:hover {
+      background: #fff;
+      transform: scale(1.03);
+    }
+
+    .float-wa-btn {
+      background: #25D366;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: var(--radius-pill);
+      font-weight: 800;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .float-wa-btn:hover {
+      background: #1eb857;
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    /* ==========================================================================
+       12. FOOTER
+       ========================================================================== */
+    .site-footer {
+      background: var(--color-hot-cacao);
+      color: var(--color-sugar-cookie);
+      padding: 56px 0 28px;
+      border-top: 4px solid var(--color-ribbon);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      color: rgba(255, 236, 197, 0.8);
+      max-width: 380px;
+      line-height: 1.6;
+    }
+
+    .footer-col h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-size: 0.88rem;
+      color: rgba(255, 236, 197, 0.8);
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 236, 197, 0.15);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: rgba(255, 236, 197, 0.6);
+    }
+
+    /* ==========================================================================
+       13. RESPONSIVE MEDIA QUERIES (MOBILE OPTIMIZED: NO OVERFLOW, NO CLIPPING)
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .top-announcement {
+        font-size: 0.78rem;
+        padding: 7px 12px;
+        line-height: 1.35;
+        flex-wrap: wrap;
+      }
+
+      .site-nav {
+        border-bottom-color: rgba(86, 36, 0, 0.1);
+      }
+
+      .nav-inner {
+        height: 64px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .inst-logo {
+        height: 34px;
+      }
+
+      .brand-logo {
+        font-size: 1.1rem;
+        gap: 8px;
+      }
+
+      .brand-text-sub {
+        font-size: 0.68rem;
+      }
+
+      .nav-btn-order {
+        padding: 8px 16px;
+        font-size: 0.84rem;
+      }
+
+      .hero-section {
+        padding: 42px 0 32px;
+      }
+
+      .hero-title {
+        font-size: clamp(1.85rem, 6vw, 2.85rem);
+        margin-bottom: 14px;
+      }
+
+      .hero-desc {
+        font-size: 0.96rem;
+        line-height: 1.6;
+        margin-bottom: 22px;
+      }
+
+      .hero-feature-pills {
+        gap: 8px;
+        margin-bottom: 26px;
+      }
+
+      .hero-pill-item {
+        padding: 5px 12px;
+        font-size: 0.78rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        margin-bottom: 36px;
+      }
+
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        padding: 13px 20px;
+        font-size: 0.95rem;
+      }
+
+      /* Countdown Card on Mobile */
+      .countdown-card {
+        padding: 22px 16px;
+        border-radius: var(--radius-md);
+      }
+
+      .countdown-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+
+      .countdown-title-wrap {
+        gap: 8px;
+      }
+
+      .countdown-title {
+        font-size: 1.05rem;
+      }
+
+      .countdown-subtitle {
+        font-size: 0.8rem;
+      }
+
+      .countdown-badge-live {
+        align-self: flex-start;
+      }
+
+      .countdown-grid {
+        gap: 6px;
+      }
+
+      .timer-box {
+        padding: 10px 4px;
+        border-radius: 12px;
+      }
+
+      .timer-num {
+        font-size: 1.75rem;
+      }
+
+      .timer-label {
+        font-size: 0.65rem;
+      }
+
+      .countdown-footer-note {
+        font-size: 0.78rem;
+        margin-top: 12px;
+      }
+
+      /* Catalog on Mobile */
+      .catalog-section {
+        padding: 52px 0;
+      }
+
+      .section-head {
+        margin-bottom: 28px;
+      }
+
+      .section-title {
+        font-size: 1.85rem;
+      }
+
+      .section-subtitle {
+        font-size: 0.92rem;
+      }
+
+      .filter-tabs {
+        gap: 8px;
+        margin-bottom: 28px;
+      }
+
+      .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.84rem;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .card-media {
+        height: 220px;
+      }
+
+      .card-body {
+        padding: 18px 16px;
+      }
+
+      .card-title {
+        font-size: 1.15rem;
+      }
+
+      .card-price {
+        font-size: 1.1rem;
+      }
+
+      .card-desc {
+        font-size: 0.86rem;
+      }
+
+      .flavor-switcher-box {
+        padding: 10px;
+      }
+
+      .flavor-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        min-height: 38px;
+      }
+
+      .card-order-btn {
+        min-height: 46px;
+        font-size: 0.92rem;
+      }
+
+      /* Payment & Contact */
+      .info-section {
+        padding: 52px 0;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 24px;
+      }
+
+      .info-card {
+        padding: 22px 18px;
+        border-radius: var(--radius-md);
+      }
+
+      .contact-section {
+        padding: 52px 0 64px;
+      }
+
+      .admin-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 24px;
+      }
+
+      .admin-card {
+        padding: 24px 18px;
+        border-radius: var(--radius-md);
+      }
+
+      .admin-btn {
+        min-height: 46px;
+      }
+
+      /* Order Modal Mobile Sheet */
+      .modal-backdrop {
+        padding: 12px;
+        align-items: flex-end;
+      }
+
+      .order-modal {
+        max-width: 100%;
+        max-height: 88vh;
+        padding: 22px 18px 24px;
+        border-radius: 24px 24px 16px 16px;
+      }
+
+      .modal-title {
+        font-size: 1.35rem;
+      }
+
+      /* Floating Controls */
+      .floating-cta {
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+        right: 16px;
+        gap: 8px;
+      }
+
+      .snow-toggle-btn {
+        padding: 5px 10px;
+        font-size: 0.72rem;
+      }
+
+      .float-wa-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+        border-radius: var(--radius-pill);
+      }
+
+      /* Footer on Mobile */
+      .site-footer {
+        padding: 44px 0 24px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 30px;
+      }
+    }
+
+    /* Small Mobile Devices (<= 480px) */
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 14px;
+      }
+
+      .brand-logos-group {
+        gap: 6px;
+      }
+
+      .inst-logo {
+        height: 28px;
+      }
+
+      .brand-logo {
+        font-size: 0.98rem;
+      }
+
+      .brand-text-sub {
+        font-size: 0.62rem;
+      }
+
+      .nav-btn-order {
+        padding: 7px 12px;
+        font-size: 0.78rem;
+      }
+
+      .order-text-full {
+        display: none;
+      }
+
+      .order-text-short {
+        display: inline;
+      }
+
+      .timer-num {
+        font-size: 1.5rem;
+      }
+
+      .timer-label {
+        font-size: 0.6rem;
+      }
+
+      .card-media {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- SNOWFALL OVERLAY -->
+  <div class="snow-canvas" id="snowContainer" aria-hidden="true"></div>
+
+  <!-- TOP ANNOUNCEMENT BANNER -->
+  <aside class="top-announcement">
+    <span>🎄</span>
+    <span><strong>Open Pre-Order Batch 3</strong> • Periode Pemesanan: 9 – 12 November 2026</span>
+    <span>✨</span>
+  </aside>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <div class="brand-logos-group">
+        <img src="./assets/logo%20ti.png" alt="Logo Pelita Nusantara" class="inst-logo" onerror="this.style.display='none'">
+        <img src="./assets/logo%20bhakta.png" alt="Logo Bhakti Wiyata" class="inst-logo" onerror="this.style.display='none'">
+        <a href="#" class="brand-logo" aria-label="Gali Dana B3 Home">
+          <div>
+            <div style="line-height: 1.15;">Gali Dana B3</div>
+            <span class="brand-text-sub">Christmas Edition</span>
+          </div>
+        </a>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#countdown" class="nav-link">Hitung Mundur</a></li>
+        <li><a href="#katalog" class="nav-link">Katalog Menu</a></li>
+        <li><a href="#pembayaran" class="nav-link">Cara Bayar</a></li>
+        <li><a href="#kontak" class="nav-link">Kontak Admin</a></li>
+      </ul>
+
+      <a href="#katalog" class="nav-btn-order">
+        <span>🎄</span>
+        <span class="order-text-full">Pesan Sekarang</span>
+        <span class="order-text-short">Pesan</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero-section">
+    <div class="container hero-wrapper">
+      <div class="hero-tag">
+        <span>✨</span>
+        <span>Spesial Natal & Akhir Tahun • Batch 3</span>
+      </div>
+
+      <h1 class="hero-title">
+        Sambut Hangatnya Natal dengan <br>
+        <span class="accent-red">Camilan Manis</span> & <span class="accent-green">Gurih Pedas!</span>
+      </h1>
+
+      <p class="hero-desc">
+        Gali Dana B3 siap nemenin momen kumpul akhir tahun kamu bareng aneka dessert lumer, 
+        soft cookies chewy, snack pedas nagih, dan salad buah segar. Semua dibuat fresh dengan bahan pilihan. 
+        Yuk amankan porsi kamu sebelum kehabisan slot!
+      </p>
+
+      <div class="hero-feature-pills">
+        <div class="hero-pill-item">
+          <span>🍪</span>
+          <span>Bahan Pilihan</span>
+        </div>
+        <div class="hero-pill-item">
+          <span>🔥</span>
+          <span>Freshly Made</span>
+        </div>
+        <div class="hero-pill-item">
+          <span>💳</span>
+          <span>Cash & QRIS</span>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#katalog" class="btn-primary">
+          <span>🍰</span>
+          <span>Jelajahi Menu & Rasa</span>
+        </a>
+        <a href="#kontak" class="btn-secondary">
+          <span>💬</span>
+          <span>Chat Admin WhatsApp</span>
+        </a>
+      </div>
+
+      <!-- LIVE COUNTDOWN CARD -->
+      <section id="countdown" class="countdown-card" aria-label="Hitung Mundur Penutupan PO">
+        <div class="countdown-header">
+          <div class="countdown-title-wrap">
+            <span style="font-size: 1.5rem;">⏳</span>
+            <div>
+              <h2 class="countdown-title">Hitung Mundur Penutupan PO</h2>
+              <p class="countdown-subtitle">Jadwal: Senin, 9 Nov 2026 – Kamis, 12 Nov 2026 (23:59 WIB)</p>
+            </div>
+          </div>
+          <div class="countdown-badge-live">
+            <span class="pulse-dot"></span>
+            <span id="countdownStatusText">PO SEDANG DIBUKA</span>
+          </div>
+        </div>
+
+        <div class="countdown-grid">
+          <div class="timer-box">
+            <span class="timer-num" id="daysVal">00</span>
+            <span class="timer-label">Hari</span>
+          </div>
+          <div class="timer-box">
+            <span class="timer-num" id="hoursVal">00</span>
+            <span class="timer-label">Jam</span>
+          </div>
+          <div class="timer-box">
+            <span class="timer-num" id="minutesVal">00</span>
+            <span class="timer-label">Menit</span>
+          </div>
+          <div class="timer-box">
+            <span class="timer-num" id="secondsVal">00</span>
+            <span class="timer-label">Detik</span>
+          </div>
+        </div>
+
+        <p class="countdown-footer-note" id="countdownFooterNote">
+          🔔 Jangan sampai ketinggalan ya! Begitu countdown selesai, pemesanan otomatis ditutup.
+        </p>
+      </section>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT: CATALOG & MENU -->
+  <main class="catalog-section" id="katalog">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-pill">🎅 Pilihan Menu Spesial</div>
+        <h2 class="section-title">Katalog Gali Dana B3</h2>
+        <p class="section-subtitle">
+          Klik varian rasa di bawah kartu menu untuk melihat foto makanan secara langsung, 
+          lalu klik <strong>Pesan via WA</strong> untuk kirim order ke admin!
+        </p>
+      </div>
+
+      <!-- FILTER TABS -->
+      <div class="filter-tabs" role="tablist" aria-label="Filter Kategori Menu">
+        <button class="filter-btn active" data-category="all" role="tab" aria-selected="true">Semua Menu (8)</button>
+        <button class="filter-btn" data-category="sweet" role="tab" aria-selected="false">🍰 Manis & Dessert (5)</button>
+        <button class="filter-btn" data-category="savory" role="tab" aria-selected="false">🥟 Gurih & Pedas (3)</button>
+      </div>
+
+      <!-- MENU GRID -->
+      <div class="menu-grid" id="menuGrid">
+
+        <!-- 1. CHEESECUIT (MULTI-VARIANT) -->
+        <article class="menu-card" data-category="sweet" data-id="cheesecuit">
+          <div class="card-media">
+            <span class="card-badge">⭐ Bestseller</span>
+            <span class="flavor-current-badge" id="badge-cheesecuit">Tiramisu</span>
+            <img 
+              id="img-cheesecuit" 
+              src="./assets/cheesecuit tiramisu.jpg" 
+              alt="Cheesecuit Tiramisu" 
+              class="card-img"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23ffecc5\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%23562400\'>🎄 Foto Cheesecuit</text></svg>';"
+            >
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-title">Cheesecuit</h3>
+              <!-- Ganti harga di sini jika diperlukan -->
+              <span class="card-price">Rp 12.000</span>
+            </div>
+            <p class="card-desc">
+              Layer biskuit renyah berpadu cream cheese lumer yang gurih manisnya balance banget. Dingin lebih nikmat, gak bikin eneg!
+            </p>
+
+            <!-- FLAVOR SWITCHER -->
+            <div class="flavor-switcher-box">
+              <div class="flavor-switcher-label">
+                <span>PILIHAN RASA:</span>
+                <span class="hint">Klik untuk ganti foto</span>
+              </div>
+              <div class="flavor-pills">
+                <button 
+                  class="flavor-btn active" 
+                  data-menu="cheesecuit" 
+                  data-name="Cheesecuit" 
+                  data-variant="Tiramisu" 
+                  data-img="./assets/cheesecuit tiramisu.jpg">
+                  ☕ Tiramisu
+                </button>
+                <button 
+                  class="flavor-btn" 
+                  data-menu="cheesecuit" 
+                  data-name="Cheesecuit" 
+                  data-variant="Matcha" 
+                  data-img="./assets/cheesecuit matcha.jpg">
+                  🍵 Matcha
+                </button>
+                <button 
+                  class="flavor-btn" 
+                  data-menu="cheesecuit" 
+                  data-name="Cheesecuit" 
+                  data-variant="Oreo" 
+                  data-img="./assets/cheesecuit oreo.jpg">
+                  🍪 Oreo
+                </button>
+                <button 
+                  class="flavor-btn" 
+                  data-menu="cheesecuit" 
+                  data-name="Cheesecuit" 
+                  data-variant="Red Velvet" 
+                  data-img="./assets/cheesecuit redvelvet.jpg">
+                  🍰 Red Velvet
+                </button>
+              </div>
+            </div>
+
+            <button 
+              class="card-order-btn" 
+              onclick="openOrderModal('Cheesecuit', 'Rp 12.000', 'cheesecuit')">
+              <span>🛒</span>
+              <span>Pesan via WA</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 2. FUDGY BROWNIES (MULTI-VARIANT) -->
+        <article class="menu-card" data-category="sweet" data-id="brownies">
+          <div class="card-media">
+            <span class="card-badge">🍫 Nyoklat Pol</span>
+            <span class="flavor-current-badge" id="badge-brownies">Choco Chip</span>
+            <img 
+              id="img-brownies" 
+              src="./assets/brownies choco chip.jpeg" 
+              alt="Brownies Choco Chip" 
+              class="card-img"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23ffecc5\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%23562400\'>🎄 Foto Brownies</text></svg>';"
+            >
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-title">Brownies Choco Chip</h3>
+              <!-- Ganti harga di sini jika diperlukan -->
+              <span class="card-price">Rp 13.000</span>
+            </div>
+            <p class="card-desc">
+              Potongan fudgy brownies chewy yang nyoklat abis dalam cup, lengkap dengan saus cokelat cocolan terpisah! Praktis dimakan, manis legitnya nagih!
+            </p>
+
+            <!-- FLAVOR SWITCHER -->
+            <div class="flavor-switcher-box">
+              <div class="flavor-switcher-label">
+                <span>PILIHAN TOPPING:</span>
+                <span class="hint">Klik untuk ganti foto</span>
+              </div>
+              <div class="flavor-pills">
+                <button 
+                  class="flavor-btn active" 
+                  data-menu="brownies" 
+                  data-name="Brownies Choco Chip" 
+                  data-variant="Choco Chip" 
+                  data-img="./assets/brownies choco chip.jpeg">
+                  🍫 Choco Chip
+                </button>
+                <button 
+                  class="flavor-btn" 
+                  data-menu="brownies" 
+                  data-name="Brownies Choco Chip" 
+                  data-variant="Keju" 
+                  data-img="./assets/brownies keju.jpeg">
+                  🧀 Keju
+                </button>
+              </div>
+            </div>
+
+            <button 
+              class="card-order-btn" 
+              onclick="openOrderModal('Brownies Choco Chip', 'Rp 13.000', 'brownies')">
+              <span>🛒</span>
+              <span>Pesan via WA</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 3. LUMPIA UBI UNGU CRISPY (MULTI-VARIANT) -->
+        <article class="menu-card" data-category="sweet" data-id="lumpia">
+          <div class="card-media">
+            <span class="card-badge garland">🍠 Crispy & Melt</span>
+            <span class="flavor-current-badge" id="badge-lumpia">Coklat</span>
+            <img 
+              id="img-lumpia" 
+              src="./assets/lumpia ubi ungu coklat.jpeg" 
+              alt="Lumpia Ubi Ungu Coklat" 
+              class="card-img"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23ffecc5\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%23562400\'>🎄 Foto Lumpia Ubi Ungu</text></svg>';"
+            >
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-title">Lumpia Ubi Ungu Coklat</h3>
+              <!-- Ganti harga di sini jika diperlukan -->
+              <span class="card-price">Rp 15.000</span>
+            </div>
+            <p class="card-desc">
+              Kulit lumpia goreng garing keemasan dengan isian ubi ungu legit alami. Dikasih filling lumer yang meleleh saat digigit hangat-hangat!
+            </p>
+
+            <!-- FLAVOR SWITCHER -->
+            <div class="flavor-switcher-box">
+              <div class="flavor-switcher-label">
+                <span>PILIHAN ISIAN:</span>
+                <span class="hint">Klik untuk ganti foto</span>
+              </div>
+              <div class="flavor-pills">
+                <button 
+                  class="flavor-btn active" 
+                  data-menu="lumpia" 
+                  data-name="Lumpia Ubi Ungu Coklat" 
+                  data-variant="Coklat" 
+                  data-img="./assets/lumpia ubi ungu coklat.jpeg">
+                  🍫 Coklat
+                </button>
+                <button 
+                  class="flavor-btn" 
+                  data-menu="lumpia" 
+                  data-name="Lumpia Ubi Ungu Coklat" 
+                  data-variant="Keju" 
+                  data-img="./assets/lumpia ubi ungu keju.jpeg">
+                  🧀 Keju
+                </button>
+              </div>
+            </div>
+
+            <button 
+              class="card-order-btn" 
+              onclick="openOrderModal('Lumpia Ubi Ungu Coklat', 'Rp 15.000', 'lumpia')">
+              <span>🛒</span>
+              <span>Pesan via WA</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 4. SOFT COOKIES NYC (MULTI-VARIANT) -->
+        <article class="menu-card" data-category="sweet" data-id="cookies">
+          <div class="card-media">
+            <span class="card-badge">🍪 Soft & Chewy</span>
+            <span class="flavor-current-badge" id="badge-cookies">Choco Original</span>
+            <img 
+              id="img-cookies" 
+              src="./assets/chocolate original detailed.jpg" 
+              alt="Chocolate Original Soft Cookie" 
+              class="card-img"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23ffecc5\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%23562400\'>🎄 Foto Soft Cookies</text></svg>';"
+            >
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-title">Soft Cookie</h3>
+              <!-- Ganti harga di sini jika diperlukan -->
+              <span class="card-price">Rp 8.000</span>
+            </div>
+            <p class="card-desc">
+              Kue soft-baked tebal khas NYC! Renyah di luar tapi empuk chewy di dalam, dengan lelehan cokelat & chunk keju melimpah plus taburan sea salt.
+            </p>
+
+            <!-- FLAVOR SWITCHER -->
+            <div class="flavor-switcher-box">
+              <div class="flavor-switcher-label">
+                <span>PILIHAN RASA:</span>
+                <span class="hint">Klik untuk ganti foto</span>
+              </div>
+              <div class="flavor-pills">
+                <button 
+                  class="flavor-btn active" 
+                  data-menu="cookies" 
+                  data-name="Soft Cookie" 
+                  data-variant="Chocolate Original" 
+                  data-img="./assets/chocolate original detailed.jpg">
+                  🍫 Chocolate Original
+                </button>
+                <button 
+                  class="flavor-btn" 
+                  data-menu="cookies" 
+                  data-name="Soft Cookie" 
+                  data-variant="Matcha Cheese" 
+                  data-img="./assets/matcha cheese detailed.jpg">
+                  🍵 Matcha Cheese
+                </button>
+                <button 
+                  class="flavor-btn" 
+                  data-menu="cookies" 
+                  data-name="Soft Cookie" 
+                  data-variant="Red Velvet Cheese" 
+                  data-img="./assets/red velvet cheese detailed.jpg">
+                  🍰 Red Velvet Cheese
+                </button>
+              </div>
+            </div>
+
+            <button 
+              class="card-order-btn" 
+              onclick="openOrderModal('Soft Cookie', 'Rp 8.000', 'cookies')">
+              <span>🛒</span>
+              <span>Pesan via WA</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 5. WONTON CHILI OIL (SINGLE VARIANT) -->
+        <article class="menu-card" data-category="savory" data-id="wonton">
+          <div class="card-media">
+            <span class="card-badge">🔥 Best Pedas</span>
+            <img 
+              id="img-wonton" 
+              src="./assets/wonton chili oil.jpeg" 
+              alt="Wonton Chili Oil" 
+              class="card-img"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23ffecc5\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%23562400\'>🎄 Foto Wonton Chili Oil</text></svg>';"
+            >
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-title">Wonton</h3>
+              <!-- Ganti harga di sini jika diperlukan -->
+              <span class="card-price">Rp 12.000</span>
+            </div>
+            <p class="card-desc">
+              Pangsit isi daging ayam tebal nan juicy, disiram kuah chili oil aromatik dengan wangi daun jeruk yang gurih pedas medok mantap!
+            </p>
+
+            <div class="single-flavor-tag">
+              <span>🌶️</span>
+              <span>Varian: Original Pedas Gurih Aroma Jeruk</span>
+            </div>
+
+            <button 
+              class="card-order-btn" 
+              onclick="openOrderModal('Wonton', 'Rp 12.000', 'wonton', 'Original Chili Oil')">
+              <span>🛒</span>
+              <span>Pesan via WA</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 6. SAMYANG ROLL (SINGLE VARIANT) -->
+        <article class="menu-card" data-category="savory" data-id="samyang">
+          <div class="card-media">
+            <span class="card-badge garland">✨ Viral Snack</span>
+            <img 
+              id="img-samyang" 
+              src="./assets/samyang roll new detailed.jpg" 
+              alt="Samyang Roll" 
+              class="card-img"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23ffecc5\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%23562400\'>🎄 Foto Samyang Roll</text></svg>';"
+            >
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-title">Samyang Roll</h3>
+              <!-- Ganti harga di sini jika diperlukan -->
+              <span class="card-price">Rp 14.000</span>
+            </div>
+            <p class="card-desc">
+              Sensasi mie Samyang pedas nampol dibalut rice paper kenyal transparan. Kenyal di luar, pedas gurih panas meledak di mulut!
+            </p>
+
+            <div class="single-flavor-tag">
+              <span>🥢</span>
+              <span>Varian: Samyang Spicy Roll</span>
+            </div>
+
+            <button 
+              class="card-order-btn" 
+              onclick="openOrderModal('Samyang Roll', 'Rp 14.000', 'samyang', 'Samyang Spicy Roll')">
+              <span>🛒</span>
+              <span>Pesan via WA</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 7. TAHU KOCEK PEDAS (SINGLE VARIANT) -->
+        <article class="menu-card" data-category="savory" data-id="tahu">
+          <div class="card-media">
+            <span class="card-badge">🌶️ Pedas Nampol</span>
+            <img 
+              id="img-tahu" 
+              src="./assets/tahu kocek.jpeg" 
+              alt="Tahu Kocek" 
+              class="card-img"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23ffecc5\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%23562400\'>🎄 Foto Tahu Kocek</text></svg>';"
+            >
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-title">Tahu Kocek</h3>
+              <!-- Ganti harga di sini jika diperlukan -->
+              <span class="card-price">Rp 13.000</span>
+            </div>
+            <p class="card-desc">
+              Tahu pong gurih hangat digeprek bareng ulekan cabe rawit segar dan bumbu racik istimewa. Asin pedas gurihnya bikin auto melek!
+            </p>
+
+            <div class="single-flavor-tag">
+              <span>🧄</span>
+              <span>Varian: Cabe Rawit Ulek Mantap</span>
+            </div>
+
+            <button 
+              class="card-order-btn" 
+              onclick="openOrderModal('Tahu Kocek', 'Rp 13.000', 'tahu', 'Cabe Rawit Ulek')">
+              <span>🛒</span>
+              <span>Pesan via WA</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 8. FRESH FRUIT SALAD (SINGLE VARIANT) -->
+        <article class="menu-card" data-category="sweet" data-id="salad">
+          <div class="card-media">
+            <span class="card-badge garland">🍓 Fresh & Creamy</span>
+            <img 
+              id="img-salad" 
+              src="./assets/salad.png" 
+              alt="Fresh Fruit Salad" 
+              class="card-img"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'><rect width=\'400\' height=\'300\' fill=\'%23ffecc5\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%23562400\'>🎄 Foto Salad Buah</text></svg>';"
+            >
+          </div>
+          <div class="card-body">
+            <div class="card-header-row">
+              <h3 class="card-title">Salad</h3>
+              <!-- Ganti harga di sini jika diperlukan -->
+              <span class="card-price">Rp 13.000</span>
+            </div>
+            <p class="card-desc">
+              Potongan buah-buahan segar & nata de coco kenyal dengan saus mayonaise manis creamy, ditutup parutan keju cheddar melimpah ruah!
+            </p>
+
+            <div class="single-flavor-tag">
+              <span>🧀</span>
+              <span>Varian: Saus Creamy Keju Melimpah</span>
+            </div>
+
+            <button 
+              class="card-order-btn" 
+              onclick="openOrderModal('Salad', 'Rp 13.000', 'salad', 'Keju Melimpah')">
+              <span>🛒</span>
+              <span>Pesan via WA</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- PAYMENT & HOW TO ORDER SECTION -->
+  <section class="info-section" id="pembayaran">
+    <div class="container">
+      <div class="section-head" style="margin-bottom: 20px;">
+        <div class="section-pill">💳 Info Pembayaran & Alur Order</div>
+        <h2 class="section-title">Mudah, Cepat & Terpercaya</h2>
+        <p class="section-subtitle">
+          Pilih metode pembayaran yang paling nyaman buat kamu. Semua transaksi tercatat rapi oleh tim panitia.
+        </p>
+      </div>
+
+      <div class="info-grid">
+        <!-- Cash Card -->
+        <div class="info-card featured">
+          <div class="info-icon">💵</div>
+          <h3 class="info-card-title">Pembayaran Tunai (Cash)</h3>
+          <p class="info-card-text">
+            Bisa dibayarkan langsung secara tunai ke panitia saat konfirmasi atau serah terima pesanan.
+          </p>
+          <div class="cash-highlight-box">
+            👉 <strong>Kalo pakai cash, diusahakan uangnya pas ya!</strong><br>
+            <em>(Biar transaksi kita sat-set, lancar, dan langsung beres tanpa repot cari kembalian 😉)</em>
+          </div>
+        </div>
+
+        <!-- QRIS Card -->
+        <div class="info-card">
+          <div class="info-icon garland">📱</div>
+          <h3 class="info-card-title">QRIS & E-Wallet</h3>
+          <p class="info-card-text">
+            Menerima pembayaran digital via QRIS dari semua aplikasi: GoPay, OVO, DANA, ShopeePay, serta Mobile Banking apapun.
+          </p>
+          <p class="info-card-text" style="font-size: 0.85rem; color: var(--color-hot-cacao-muted);">
+            <em>*Barcode QRIS akan dikirimkan langsung oleh admin saat kamu kirim pesan konfirmasi pemesanan di WhatsApp.</em>
+          </p>
+        </div>
+
+        <!-- Order Flow Card -->
+        <div class="info-card">
+          <div class="info-icon">📋</div>
+          <h3 class="info-card-title">Alur Pemesanan Simple</h3>
+          <ul class="order-steps-list">
+            <li class="order-step-item">
+              <span class="step-number">1</span>
+              <span>Pilih menu favorit dan rasa yang kamu mau di katalog atas.</span>
+            </li>
+            <li class="order-step-item">
+              <span class="step-number">2</span>
+              <span>Klik tombol <strong>Pesan via WA</strong> lalu pilih admin (Maria / Yessy).</span>
+            </li>
+            <li class="order-step-item">
+              <span class="step-number">3</span>
+              <span>Kirim pesan otomatis yang sudah tersusun rapi ke WhatsApp admin.</span>
+            </li>
+            <li class="order-step-item">
+              <span class="step-number">4</span>
+              <span>Lakukan pembayaran (Cash / QRIS) dan ambil pesananmu saat hari H!</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & ADMIN SECTION -->
+  <section class="contact-section" id="kontak">
+    <div class="container contact-wrapper">
+      <div class="section-head">
+        <div class="section-pill">📞 Hubungi Admin</div>
+        <h2 class="section-title">Siap Melayani Pesanan Kamu</h2>
+        <p class="section-subtitle">
+          Ada pertanyaan seputar menu, stok, atau mau pesan jumlah banyak? 
+          Langsung japri salah satu admin ramah kami di bawah ya!
+        </p>
+      </div>
+
+      <div class="admin-cards-grid">
+        <!-- Admin 1: Maria -->
+        <div class="admin-card">
+          <div class="admin-avatar">👧</div>
+          <h3 class="admin-name">Admin Maria</h3>
+          <div class="admin-role">Order & Konfirmasi Pembayaran</div>
+          <div class="admin-phone">+62 822-2876-4048</div>
+          <a 
+            href="https://wa.me/6282228764048?text=Halo%20Kak%20Maria!%20Aku%20mau%20order%20Gali%20Dana%20B3%20Christmas%20Edition%20🎄" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="admin-btn">
+            <span>💬</span>
+            <span>Chat WhatsApp Maria</span>
+          </a>
+        </div>
+
+        <!-- Admin 2: Yessy -->
+        <div class="admin-card">
+          <div class="admin-avatar">👩</div>
+          <h3 class="admin-name">Admin Yessy</h3>
+          <div class="admin-role">Order & Info Pengambilan</div>
+          <div class="admin-phone">+62 819-7718-2071</div>
+          <a 
+            href="https://wa.me/6281977182071?text=Halo%20Kak%20Yessy!%20Aku%20mau%20order%20Gali%20Dana%20B3%20Christmas%20Edition%20🎄" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="admin-btn">
+            <span>💬</span>
+            <span>Chat WhatsApp Yessy</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+            <img src="./assets/logo%20ti.png" alt="Logo Pelita Nusantara" style="height: 38px; width: auto; background: #fff; padding: 3px; border-radius: 6px;">
+            <img src="./assets/logo%20bhakta.png" alt="Logo Bhakti Wiyata" style="height: 38px; width: auto; background: #fff; padding: 3px; border-radius: 6px;">
+          </div>
+          <h3>🎄 Gali Dana B3 Christmas Edition</h3>
+          <p>
+            Program penggalian dana dengan menyajikan aneka camilan lezat dan dessert berkualitas untuk 
+            mendukung kegiatan bersama. Dibuat dengan penuh rasa cinta dan semangat kebersamaan Natal!
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigasi Cepat</h4>
+          <ul class="footer-links">
+            <li><a href="#countdown">Jadwal & Countdown</a></li>
+            <li><a href="#katalog">Katalog Menu</a></li>
+            <li><a href="#pembayaran">Info Pembayaran</a></li>
+            <li><a href="#kontak">Kontak Admin</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Admin WhatsApp</h4>
+          <ul class="footer-links">
+            <li><a href="https://wa.me/6282228764048" target="_blank" rel="noopener">Maria (+62 822-2876-4048)</a></li>
+            <li><a href="https://wa.me/6281977182071" target="_blank" rel="noopener">Yessy (+62 819-7718-2071)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Gali Dana Batch 3. Dibuat spesial untuk edisi Natal • Warmth, Joy & Delicious Treats 🎁</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING QUICK ACTION BUTTON -->
+  <div class="floating-cta">
+    <button class="snow-toggle-btn" id="snowToggleBtn" title="Aktif/Nonaktifkan Salju">
+      <span>❄️</span>
+      <span id="snowToggleLabel">Salju: ON</span>
+    </button>
+    <a href="#katalog" class="float-wa-btn" aria-label="Lihat Menu Pesanan">
+      <span>🛒</span>
+      <span class="label">Pesan</span>
+    </a>
+  </div>
+
+  <!-- ORDER POPUP MODAL -->
+  <div class="modal-backdrop" id="orderModal" aria-hidden="true">
+    <div class="order-modal" role="dialog" aria-labelledby="modalTitle">
+      <button class="modal-close-btn" onclick="closeOrderModal()" aria-label="Tutup Modal">&times;</button>
+      
+      <h3 class="modal-title" id="modalTitle">Konfirmasi Pesanan</h3>
+      <p class="modal-subtitle">Atur jumlah porsi dan pilih admin tujuan pemesanan.</p>
+
+      <div class="modal-product-summary">
+        <img src="./assets/cheesecuit tiramisu.jpg" alt="Preview Menu" class="modal-thumb" id="modalThumb">
+        <div class="modal-prod-info">
+          <div class="modal-prod-name" id="modalProdName">Cheesecuit Special</div>
+          <div class="modal-prod-variant" id="modalProdVariant">Varian: Tiramisu</div>
+          <div class="modal-prod-price" id="modalProdPrice">Rp 12.000</div>
+        </div>
+      </div>
+
+      <form id="orderForm" onsubmit="submitWhatsAppOrder(event)">
+        <!-- QTY -->
+        <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+          <label class="form-label" style="margin-bottom: 0;">Jumlah Porsi:</label>
+          <div class="qty-control">
+            <button type="button" class="qty-btn" onclick="adjustQty(-1)">&minus;</button>
+            <span class="qty-value" id="modalQtyVal">1</span>
+            <button type="button" class="qty-btn" onclick="adjustQty(1)">&plus;</button>
+          </div>
+        </div>
+
+        <!-- TOTAL ESTIMATION -->
+        <div class="modal-total-box">
+          <span>Estimasi Total:</span>
+          <strong id="modalTotalPrice">Rp 12.000</strong>
+        </div>
+
+        <!-- BUYER NAME -->
+        <div class="form-group">
+          <label class="form-label" for="buyerName">Nama Kamu / Pemesan:</label>
+          <input type="text" id="buyerName" class="form-input" placeholder="Misal: Dinda / Kelas XI-A" required>
+        </div>
+
+        <!-- NOTES -->
+        <div class="form-group">
+          <label class="form-label" for="orderNote">Catatan Khusus (Opsional):</label>
+          <input type="text" id="orderNote" class="form-input" placeholder="Misal: level pedas sedang / saus dipisah">
+        </div>
+
+        <!-- PAYMENT PREFERENCE -->
+        <div class="form-group">
+          <label class="form-label" for="paymentMethod">Pilihan Pembayaran:</label>
+          <select id="paymentMethod" class="form-input">
+            <option value="Cash (Uang Pas)">Cash / Tunai (Diusahakan Uang Pas)</option>
+            <option value="QRIS / Transfer">QRIS / E-Wallet</option>
+          </select>
+        </div>
+
+        <!-- CHOOSE ADMIN -->
+        <div class="form-group">
+          <label class="form-label">Kirim Pesanan ke Admin:</label>
+          <div class="admin-pick-grid">
+            <div class="admin-radio-btn active" id="btnAdminMaria" onclick="selectAdmin('maria')">
+              <strong>Maria</strong>
+              <span>+62 822-2876-4048</span>
+            </div>
+            <div class="admin-radio-btn" id="btnAdminYessy" onclick="selectAdmin('yessy')">
+              <strong>Yessy</strong>
+              <span>+62 819-7718-2071</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBMIT -->
+        <button type="submit" class="modal-submit-btn">
+          <span>💬</span>
+          <span>Kirim Pesanan ke WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT LOGIC
+       1. Snowfall Generator & Toggle
+       2. Countdown to 12 Nov 2026 23:59:59 WIB
+       3. Smooth Flavor Switcher with Relative Paths
+       4. Filter Tabs
+       5. WhatsApp Order Modal & Message Formatter
+       ========================================================================== -->
+  <script>
+    // State Store
+    const currentOrder = {
+      menuName: '',
+      variant: '',
+      price: '',
+      imgSrc: '',
+      quantity: 1,
+      selectedAdmin: 'maria' // 'maria' or 'yessy'
+    };
+
+    // Admin Numbers (Clean WA format)
+    const ADMINS = {
+      maria: {
+        name: 'Maria',
+        number: '6282228764048'
+      },
+      yessy: {
+        name: 'Yessy',
+        number: '6281977182071'
+      }
+    };
+
+    /* -------------------------------------------------------------------------
+       1. LIVE COUNTDOWN TIMER
+       Target: 12 November 2026, 23:59:59 WIB (UTC+7)
+       ------------------------------------------------------------------------- */
+    function initCountdown() {
+      // 12 Nov 2026 23:59:59 GMT+7
+      const targetDate = new Date('2026-11-12T23:59:59+07:00').getTime();
+
+      const daysEl = document.getElementById('daysVal');
+      const hoursEl = document.getElementById('hoursVal');
+      const minutesEl = document.getElementById('minutesVal');
+      const secondsEl = document.getElementById('secondsVal');
+      const statusText = document.getElementById('countdownStatusText');
+      const footerNote = document.getElementById('countdownFooterNote');
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const difference = targetDate - now;
+
+        if (difference <= 0) {
+          daysEl.textContent = '00';
+          hoursEl.textContent = '00';
+          minutesEl.textContent = '00';
+          secondsEl.textContent = '00';
+          if (statusText) statusText.textContent = 'PO RESMI DITUTUP';
+          if (footerNote) footerNote.innerHTML = '✨ <strong>Terima kasih banyak!</strong> Pemesanan PO Batch 3 sudah resmi ditutup.';
+          return;
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        daysEl.textContent = String(days).padStart(2, '0');
+        hoursEl.textContent = String(hours).padStart(2, '0');
+        minutesEl.textContent = String(minutes).padStart(2, '0');
+        secondsEl.textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
+
+    /* -------------------------------------------------------------------------
+       2. FLAVOR SWITCHER LOGIC
+       Transisi halus gambar saat tombol rasa diklik.
+       PENTING GITHUB PAGES: Semua path gambar memakai format relative path (titik-slash assets)
+       ------------------------------------------------------------------------- */
+    function initFlavorSwitcher() {
+      const flavorButtons = document.querySelectorAll('.flavor-btn');
+
+      flavorButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+
+          const menuKey = this.getAttribute('data-menu');
+          const variantName = this.getAttribute('data-variant');
+          const targetImgPath = this.getAttribute('data-img');
+
+          // Parent card & components
+          const card = this.closest('.menu-card');
+          const targetImg = card.querySelector('.card-img');
+          const badge = card.querySelector('.flavor-current-badge');
+          const siblingButtons = card.querySelectorAll('.flavor-btn');
+
+          // Update active button state
+          siblingButtons.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+
+          // Smooth transition effect on image
+          if (targetImg) {
+            targetImg.classList.add('is-transitioning');
+            
+            // Preload target image
+            const preloader = new Image();
+            preloader.src = targetImgPath;
+            
+            preloader.onload = function() {
+              targetImg.src = targetImgPath;
+              targetImg.alt = variantName;
+              targetImg.classList.remove('is-transitioning');
+            };
+
+            preloader.onerror = function() {
+              // Jika gambar belum ada, tetap ganti src dan hilangkan efek
+              targetImg.src = targetImgPath;
+              targetImg.classList.remove('is-transitioning');
+            };
+          }
+
+          // Update current flavor badge text
+          if (badge) {
+            badge.textContent = variantName;
+          }
+        });
+      });
+    }
+
+    /* -------------------------------------------------------------------------
+       3. CATEGORY FILTER TABS
+       ------------------------------------------------------------------------- */
+    function initCategoryFilter() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.menu-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          this.classList.add('active');
+          this.setAttribute('aria-selected', 'true');
+
+          const category = this.getAttribute('data-category');
+
+          cards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+
+    /* -------------------------------------------------------------------------
+       4. ORDER MODAL & WHATSAPP GENERATOR
+       ------------------------------------------------------------------------- */
+    function getUnitPrice(priceStr) {
+      return parseInt(String(priceStr).replace(/[^0-9]/g, '')) || 0;
+    }
+
+    function updateModalTotal() {
+      const unit = getUnitPrice(currentOrder.price);
+      const total = unit * currentOrder.quantity;
+      const totalEl = document.getElementById('modalTotalPrice');
+      if (totalEl) {
+        totalEl.textContent = 'Rp ' + total.toLocaleString('id-ID');
+      }
+    }
+
+    function openOrderModal(menuName, price, menuKey, defaultVariant = null) {
+      currentOrder.menuName = menuName;
+      currentOrder.price = price;
+      currentOrder.quantity = 1;
+      currentOrder.selectedAdmin = 'maria';
+
+      // Find current selected variant & image from card
+      const card = document.querySelector(`.menu-card[data-id="${menuKey}"]`);
+      if (card) {
+        const activeBtn = card.querySelector('.flavor-btn.active');
+        if (activeBtn) {
+          currentOrder.variant = activeBtn.getAttribute('data-variant');
+          currentOrder.imgSrc = activeBtn.getAttribute('data-img');
+        } else {
+          currentOrder.variant = defaultVariant || 'Original';
+          const img = card.querySelector('.card-img');
+          currentOrder.imgSrc = img ? img.getAttribute('src') : './assets/salad.png';
+        }
+      }
+
+      // Populate Modal Fields
+      document.getElementById('modalProdName').textContent = currentOrder.menuName;
+      document.getElementById('modalProdVariant').textContent = 'Varian: ' + currentOrder.variant;
+      document.getElementById('modalProdPrice').textContent = currentOrder.price;
+      document.getElementById('modalThumb').src = currentOrder.imgSrc;
+      document.getElementById('modalQtyVal').textContent = '1';
+      document.getElementById('buyerName').value = '';
+      const noteInput = document.getElementById('orderNote');
+      if (noteInput) noteInput.value = '';
+
+      updateModalTotal();
+
+      // Reset admin radio UI
+      selectAdmin('maria');
+
+      // Open Modal
+      const modal = document.getElementById('orderModal');
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeOrderModal() {
+      const modal = document.getElementById('orderModal');
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close when clicking outside modal box
+    document.getElementById('orderModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeOrderModal();
+      }
+    });
+
+    function adjustQty(amount) {
+      currentOrder.quantity += amount;
+      if (currentOrder.quantity < 1) currentOrder.quantity = 1;
+      if (currentOrder.quantity > 50) currentOrder.quantity = 50;
+      document.getElementById('modalQtyVal').textContent = currentOrder.quantity;
+      updateModalTotal();
+    }
+
+    function selectAdmin(adminKey) {
+      currentOrder.selectedAdmin = adminKey;
+      const btnMaria = document.getElementById('btnAdminMaria');
+      const btnYessy = document.getElementById('btnAdminYessy');
+
+      if (adminKey === 'maria') {
+        btnMaria.classList.add('active');
+        btnYessy.classList.remove('active');
+      } else {
+        btnYessy.classList.add('active');
+        btnMaria.classList.remove('active');
+      }
+    }
+
+    function submitWhatsAppOrder(event) {
+      event.preventDefault();
+      const buyerName = document.getElementById('buyerName').value.trim();
+      const paymentMethod = document.getElementById('paymentMethod').value;
+      const noteInput = document.getElementById('orderNote');
+      const orderNote = noteInput ? noteInput.value.trim() : '';
+      const adminInfo = ADMINS[currentOrder.selectedAdmin];
+
+      const unit = getUnitPrice(currentOrder.price);
+      const total = unit * currentOrder.quantity;
+      const totalFormatted = 'Rp ' + total.toLocaleString('id-ID');
+
+      // Format WhatsApp Message (Gaya Kasual & Rapi)
+      const messageText = 
+`Halo Kak ${adminInfo.name}! 🎄✨
+Aku mau pesan PO Gali Dana B3 Christmas Edition:
+
+📋 *Detail Pesanan:*
+• Menu: *${currentOrder.menuName}*
+• Varian Rasa: *${currentOrder.variant}*
+• Jumlah: *${currentOrder.quantity} porsi*
+• Harga Satuan: *${currentOrder.price}*
+• Total Estimasi: *${totalFormatted}*${orderNote ? '\n• Catatan Khusus: _' + orderNote + '_' : ''}
+
+👤 *Data Pemesan:*
+• Nama: ${buyerName}
+• Metode Pembayaran: ${paymentMethod}
+
+Mohon info konfirmasi dan instruksi berikutnya ya kak. Makasih banyak! 🎁❤️`;
+
+      // Encode URL for WhatsApp
+      const waUrl = `https://wa.me/${adminInfo.number}?text=${encodeURIComponent(messageText)}`;
+
+      // Buka tab WhatsApp
+      window.open(waUrl, '_blank');
+      closeOrderModal();
+    }
+
+    /* -------------------------------------------------------------------------
+       5. LIGHTWEIGHT CSS SNOWFALL GENERATOR
+       ------------------------------------------------------------------------- */
+    function initSnowfall() {
+      const container = document.getElementById('snowContainer');
+      const snowToggleBtn = document.getElementById('snowToggleBtn');
+      const snowToggleLabel = document.getElementById('snowToggleLabel');
+      let isSnowing = true;
+      const flakeIcons = ['❄', '❅', '❆', '•'];
+      const flakeCount = 28; // Ringan dan elegan, tidak bikin lag
+
+      for (let i = 0; i < flakeCount; i++) {
+        const flake = document.createElement('div');
+        flake.className = 'snowflake';
+        flake.textContent = flakeIcons[Math.floor(Math.random() * flakeIcons.length)];
+        
+        // Randomize position, size & timing
+        const size = (Math.random() * 0.9 + 0.6).toFixed(2);
+        const left = (Math.random() * 100).toFixed(2);
+        const duration = (Math.random() * 7 + 6).toFixed(2);
+        const delay = (Math.random() * 8).toFixed(2);
+        const swayDuration = (Math.random() * 3 + 2).toFixed(2);
+
+        flake.style.fontSize = `${size}rem`;
+        flake.style.left = `${left}%`;
+        flake.style.animationDuration = `${duration}s, ${swayDuration}s`;
+        flake.style.animationDelay = `${delay}s, ${delay}s`;
+
+        container.appendChild(flake);
+      }
+
+      // Snow Toggle Button Handler
+      snowToggleBtn.addEventListener('click', function() {
+        isSnowing = !isSnowing;
+        if (isSnowing) {
+          container.style.display = 'block';
+          snowToggleLabel.textContent = 'Salju: ON';
+        } else {
+          container.style.display = 'none';
+          snowToggleLabel.textContent = 'Salju: OFF';
+        }
+      });
+    }
+
+    // Initialize all modules on DOM ready
+    document.addEventListener('DOMContentLoaded', function() {
+      initCountdown();
+      initFlavorSwitcher();
+      initCategoryFilter();
+      initSnowfall();
+    });
+  </script>
+</body>
+</html>
