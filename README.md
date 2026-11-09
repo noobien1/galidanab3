@@ -35,7 +35,7 @@ Desain website menggunakan palet warna khusus bertema Natal yang hangat, manis, 
 4. **Order Modal & Integrasi Direct WhatsApp:**
    - Ketika menekan tombol **Pesan via WA**, muncul pop-up untuk mengatur jumlah porsi, kalkulasi estimasi total harga otomatis, nama pemesan, catatan khusus (opsional), dan pilihan metode bayar.
    - Pilihan admin WhatsApp:
-     - **Maria:** `+62 822-2876-4048`
+     - **Maria:** `+62 822-2876-4084`
      - **Yessy:** `+62 819-7718-2071`
    - Otomatis memformat teks pesan WhatsApp yang rapi, kasual, dan siap kirim.
 
@@ -132,7 +132,7 @@ Semua pemanggilan gambar di HTML dan JavaScript wajib menggunakan **Relative Pat
 - **Mengubah Kontak WhatsApp:** Cari objek `ADMINS` di bagian `<script>`:
   ```javascript
   const ADMINS = {
-    maria: { name: 'Maria', number: '6282228764048' },
+    maria: { name: 'Maria', number: '6282228764084' },
     yessy: { name: 'Yessy', number: '6281977182071' }
   };
   ```
